@@ -1,0 +1,151 @@
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px #e3c28b, 0 0 10px #e3c28b, 0 0 15px #ff9800;
+    }
+    50% {
+        text-shadow: 0 0 10px #e3c28b, 0 0 20px #ff9800, 0 0 30px #ff9800;
+    }
+    100% {
+        text-shadow: 0 0 5px #e3c28b, 0 0 10px #e3c28b, 0 0 15px #ff9800;
+    }
+}
+
+/* Add shimmer animation */
+@keyframes frameShimmer {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+  }
+  
+
+@keyframes subtleSwing {
+    0% {
+      transform: rotate(0deg) translateZ(0);
+    }
+    25% {
+      transform: rotate(-2deg) translateZ(10px);
+    }
+    75% {
+      transform: rotate(2deg) translateZ(10px);
+    }
+    100% {
+      transform: rotate(0deg) translateZ(0);
+    }
+  }
+
+@keyframes subtleShift {
+    0% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: 100% 100%;
+    }
+    100% {
+      background-position: 0% 0%;
+    }
+  }
+
+  @font-face {
+    font-family: 'Silkscreen';
+    src: url('../Silkscreen/slkscr.ttf') format('truetype');
+  }
+  
+  .background {
+    animation: subtleShift 30s ease infinite;
+    background-size: 400% 400%;
+  }
+
+.atmosphere {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: 
+      radial-gradient(
+        circle at 50% 200px,
+        rgba(255, 215, 0, 0.08) 0%,    /* Subtle golden glow */
+        transparent 40%
+      ),
+      linear-gradient(
+        0deg,
+        transparent 0%,
+        rgba(30, 26, 44, 0.3) 50%,
+        transparent 100%
+      );
+    pointer-events: none;
+    mix-blend-mode: soft-light;
+  }
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    padding: 20px 30px; /* Add some horizontal padding */
+    background: radial-gradient(
+        circle at 50% 0%,
+        rgba(45, 38, 63, 0.97) 0%,    /* Rich purple base */
+        rgba(28, 25, 44, 0.95) 25%,   /* Deep space purple */
+        rgba(20, 18, 32, 0.98) 50%,   /* Mysterious dark purple */
+        rgba(16, 14, 26, 1) 75%,      /* Deep void */
+        rgba(10, 8, 16, 1) 100%       /* Almost black */
+      ),
+      linear-gradient(
+        135deg,
+        rgba(255, 215, 0, 0.05) 0%,    /* Super subtle gold */
+        rgba(58, 134, 255, 0.05) 50%,  /* Barely visible blue */
+        rgba(255, 215, 0, 0.05) 100%   /* Gold again */
+      ),
+      repeating-linear-gradient(
+        45deg,
+        rgba(20, 17, 35, 0.5) 0%,
+        rgba(20, 17, 35, 0.5) 10px,
+        rgba(26, 22, 44, 0.5) 10px,
+        rgba(26, 22, 44, 0.5) 20px
+      );
+    box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.9);
+    position: relative;
+}
+
+.hero-image {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 1;
+    height: 50%;
+    /* Keep image contained properly */
+    max-width: 500px; /* Adjust this value based on your needs */
+    position: relative;
+    padding: 20px;
+  }
+
+.hero-image img {
+    width: auto;        /* Changed from max-width: 100% */
+    height: 100%;       /* Changed from auto */
+    object-fit: scale-down;  /* Changed from contain */
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.1); /* Subtle golden glow */
+    transform: perspective(1000px) rotateY(-5deg); /* Slight 3D tilt */       
+    animation: subtleSwing 4s ease-in-out infinite;
+    transform-origin: top center;
+    transform-style: preserve-3d; /* Adds depth to the swing */
+    border: 8px solid transparent;
+    background: linear-gradient(45deg, #FEFFF8, #ffd700, #FEFFF8, #ffd700) border-box;
+    box-shadow: 
+      0 0 15px rgba(255, 215, 0, 0.3),  /* Outer glow */
+      inset 0 0 15px rgba(255, 215, 0, 0.3);  /* Inner glow */
+    padding: 4px; /* Creates space between image and frame */
+}
+
+.hero-text h1 {
+    font-family: 'Silkscreen', monospace;;
+    font-size: 3rem;
+    color: #FEFFF8;
+    animation: glow 1.5s infinite;
+}
+
+.hero-text p {
+    font-family: 'Silkscreen', monospace;;
+    font-size: 1.2rem;
+    color: #FFE4A3;
+
+}

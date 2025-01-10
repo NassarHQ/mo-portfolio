@@ -1,7 +1,10 @@
 import React from 'react';
+import useSmoothScroll from '../hooks/useSmoothScroll';
 import './NavigationSection.css';
 
 function NavigationSection() {
+  const scrollToSection = useSmoothScroll();
+  
   const AboutIcon = () => (
     <svg viewBox="0 0 16 16" className="w-full h-full pixel-art">
       {/* ID Card Frame */}
@@ -105,7 +108,7 @@ function NavigationSection() {
   };
 
   return (
-    <div className="pyramid-container">
+    <div className="navigation-container">
       <div className="navigation-grid">
         {sections.map((section) => (
           <div

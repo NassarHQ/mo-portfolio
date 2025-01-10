@@ -87,79 +87,52 @@
     mix-blend-mode: soft-light;
   }
 
-.hero {
+  .hero {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start; /* Align everything to the left */
+    align-items: flex-start; /* Align items at the top */
     align-items: center;
-    height: 100vh; /* Full viewport height */
-    padding: 20px 30px; /* Add some horizontal padding */
-    max-width: 100vw;
-    width: 100%;
-    background: radial-gradient(
-        circle at 50% 0%,
-        rgba(45, 38, 63, 0.97) 0%,    /* Rich purple base */
-        rgba(28, 25, 44, 0.95) 25%,   /* Deep space purple */
-        rgba(20, 18, 32, 0.98) 50%,   /* Mysterious dark purple */
-        rgba(16, 14, 26, 1) 75%,      /* Deep void */
-        rgba(10, 8, 16, 1) 100%       /* Almost black */
-      ),
-      linear-gradient(
-        135deg,
-        rgba(255, 215, 0, 0.05) 0%,    /* Super subtle gold */
-        rgba(58, 134, 255, 0.05) 50%,  /* Barely visible blue */
-        rgba(255, 215, 0, 0.05) 100%   /* Gold again */
-      ),
-      repeating-linear-gradient(
-        45deg,
-        rgba(20, 17, 35, 0.5) 0%,
-        rgba(20, 17, 35, 0.5) 10px,
-        rgba(26, 22, 44, 0.5) 10px,
-        rgba(26, 22, 44, 0.5) 20px
-      );
-    box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.9);
+    height: 100vh;
+    padding: 50px;
     position: relative;
 }
 
 .hero-image {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    flex: 1;
-    height: 50%;
-    /* Keep image contained properly */
-    max-width: 500px; /* Adjust this value based on your needs */
-    position: relative;
-    padding: 20px;
-  }
+  flex: 1; /* Allow it to take up equal space */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Maintain full height of the section */
+  padding: 20px;
+}
 
 .hero-image img {
-    width: auto;        /* Changed from max-width: 100% */
-    height: 100%;       /* Changed from auto */
-    object-fit: scale-down;  /* Changed from contain */
-    box-shadow: 0 0 30px rgba(255, 215, 0, 0.1); /* Subtle golden glow */
-    transform: perspective(1000px) rotateY(-5deg); /* Slight 3D tilt */       
-    animation: subtleSwing 4s ease-in-out infinite;
-    transform-origin: top center;
-    transform-style: preserve-3d; /* Adds depth to the swing */
-    border: 8px solid transparent;
+  max-width: 90%;
+  height: auto; /* Maintain aspect ratio */
+  object-fit: contain;
+  animation: subtleSwing 4s ease-in-out infinite;
+  border: 0.5em solid transparent; /* Use scalable units for the border */
     background: linear-gradient(45deg, #FEFFF8, #ffd700, #FEFFF8, #ffd700) border-box;
     box-shadow: 
       0 0 15px rgba(255, 215, 0, 0.3),  /* Outer glow */
       inset 0 0 15px rgba(255, 215, 0, 0.3);  /* Inner glow */
-    padding: 4px; /* Creates space between image and frame */
+}
+
+/* HeroSection.css */
+.hero-text {
+  flex: 1; /* Maintain equal space */
+  margin-left: 20%; /* Push text further to the right */
 }
 
 .hero-text h1 {
-    font-family: 'Silkscreen', monospace;;
-    font-size: 3rem;
-    color: #FEFFF8;
-    animation: glow 1.5s infinite;
+  font-family: 'Silkscreen', monospace;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  font-size: 3rem;
+  color: #FEFFF8;
+  margin: 10px 10px;
+  animation: glow 1.5s infinite;
 }
 
-.hero-text p {
-    font-family: 'Silkscreen', monospace;;
-    font-size: 1.2rem;
-    color: #FFE4A3;
-
-}
 

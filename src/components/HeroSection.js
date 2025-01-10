@@ -7,11 +7,9 @@ const HeroSection = () => {
     return (
         <div className="hero">
             <div className="hero-text">
-                <h1>Welcome to Nassar's Portfolio</h1>
-                <p>Hi there! I'm a Computer Science student at SJSU
-                    who loves turning ideas into reality with code. 
-                    I'm passionate about problem-solving and enjoy 
-                    creating projects that blend creativity and technology.</p>
+                <h1>HI,</h1>
+                <h1>I am Mohammed,</h1>
+                <h1>Computer Science Student at SJSU.</h1>
             </div>
             <div className="hero-image">
                 <img src={pharaoh} alt="pharaoh themed picture" />

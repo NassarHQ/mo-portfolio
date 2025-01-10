@@ -1,0 +1,85 @@
+.about {
+    min-height: 100%;
+    /* padding: 20px 30px; */
+    /* position: relative; */
+    background: radial-gradient(
+        circle at 50% 0%,
+        rgba(45, 38, 63, 0.97) 0%,    /* Rich purple base */
+        rgba(28, 25, 44, 0.95) 25%,   /* Deep space purple */
+        rgba(20, 18, 32, 0.98) 50%,   /* Mysterious dark purple */
+        rgba(16, 14, 26, 1) 75%,      /* Deep void */
+        rgba(10, 8, 16, 1) 100%       /* Almost black */
+      ),
+      linear-gradient(
+        135deg,
+        rgba(255, 215, 0, 0.05) 0%,    /* Super subtle gold */
+        rgba(58, 134, 255, 0.05) 50%,  /* Barely visible blue */
+        rgba(255, 215, 0, 0.05) 100%   /* Gold again */
+      ),
+      repeating-linear-gradient(
+        45deg,
+        rgba(20, 17, 35, 0.5) 0%,
+        rgba(20, 17, 35, 0.5) 10px,
+        rgba(26, 22, 44, 0.5) 10px,
+        rgba(26, 22, 44, 0.5) 20px
+      );
+    box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.9);
+    position: relative;
+}
+
+.background {
+    animation: subtleShift 30s ease infinite;
+    background-size: 400% 400%;
+  }
+
+
+  .atmosphere {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: 
+      radial-gradient(
+        circle at 50% 200px,
+        rgba(255, 215, 0, 0.08) 0%,    /* Subtle golden glow */
+        transparent 40%
+      ),
+      linear-gradient(
+        0deg,
+        transparent 0%,
+        rgba(30, 26, 44, 0.3) 50%,
+        transparent 100%
+      );
+    pointer-events: none;
+    mix-blend-mode: soft-light;
+  }
+
+  .about-text h1 {
+    font-family: 'Silkscreen', monospace;
+    font-size: 3.5rem;
+    color: #FFFFFF;  /* Pure white */
+    text-align: center;
+    margin: 4rem 0;
+    text-transform: uppercase;
+    animation: glow 1.5s infinite;  /* Using your existing glow animation */
+}
+
+.about-text p, 
+.about-text li {
+    font-family: 'Silkscreen', monospace;
+    font-size: 1.1rem;
+    color: #FFD700;  /* Bright gold */
+    text-align: center;
+    line-height: 2;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    max-width: 80%;
+    margin: 0 auto 2.5rem auto;
+}
+
+.about-text li {
+    text-align: left;
+    list-style-type: none;
+    margin-bottom: 1.5rem;
+}

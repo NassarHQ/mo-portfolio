@@ -1,85 +1,125 @@
-.about {
-    min-height: 100%;
-    /* padding: 20px 30px; */
-    /* position: relative; */
-    background: radial-gradient(
-        circle at 50% 0%,
-        rgba(45, 38, 63, 0.97) 0%,    /* Rich purple base */
-        rgba(28, 25, 44, 0.95) 25%,   /* Deep space purple */
-        rgba(20, 18, 32, 0.98) 50%,   /* Mysterious dark purple */
-        rgba(16, 14, 26, 1) 75%,      /* Deep void */
-        rgba(10, 8, 16, 1) 100%       /* Almost black */
-      ),
-      linear-gradient(
-        135deg,
-        rgba(255, 215, 0, 0.05) 0%,    /* Super subtle gold */
-        rgba(58, 134, 255, 0.05) 50%,  /* Barely visible blue */
-        rgba(255, 215, 0, 0.05) 100%   /* Gold again */
-      ),
-      repeating-linear-gradient(
-        45deg,
-        rgba(20, 17, 35, 0.5) 0%,
-        rgba(20, 17, 35, 0.5) 10px,
-        rgba(26, 22, 44, 0.5) 10px,
-        rgba(26, 22, 44, 0.5) 20px
-      );
-    box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.9);
-    position: relative;
+/* AboutSection.css */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.about-section {
+  background-color: #0a0a1f;
+  padding: 4rem 2rem;
+  position: relative;
+  overflow: hidden;
+  scroll-margin-top: 80px;
+  min-height: auto;
+  padding-bottom: 2rem;
 }
 
-.background {
-    animation: subtleShift 30s ease infinite;
-    background-size: 400% 400%;
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: linear-gradient(45deg, #141432, #1a1a3a);
+  border: 2px solid #ffd700;
+  position: relative;
+}
+
+.about-container::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #ffd700, #ff6b6b, #4ecdc4);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.about-container:hover::before {
+  opacity: 0.1;
+}
+
+.section-title {
+  font-family: 'Press Start 2P', cursive;
+  color: #ffd700;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 0px #000;
+  position: relative;
+  display: inline-block;
+}
+
+.about-text p {
+  color: #ffffff;
+  font-size: 0.8rem;
+  line-height: 2;
+  margin-bottom: 2rem;
+  font-family: 'Press Start 2P', cursive;
+  text-shadow: 1px 1px 0px #000;
+}
+
+.about-text h1 {
+  font-family: 'Press Start 2P', cursive;
+  color: #ffd700;
+  font-size: 1.5rem;
+  margin: 2rem 0 1rem;
+  text-shadow: 2px 2px 0px #000;
+}
+
+.learnings-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.learnings-list li {
+  color: #ffffff;
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  position: relative;
+  line-height: 2;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.8rem;
+}
+
+.learnings-list li::before {
+  content: '►';
+  position: absolute;
+  left: 0;
+  color: #ffd700;
+  font-size: 0.6rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Add pixel corners */
+.pixel-corner {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #ffd700;
+}
+
+.corner-tl { top: -2px; left: -2px; }
+.corner-tr { top: -2px; right: -2px; }
+.corner-bl { bottom: -2px; left: -2px; }
+.corner-br { bottom: -2px; right: -2px; }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-section {
+    padding: 2rem 1rem;
   }
-
-
-  .atmosphere {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: 
-      radial-gradient(
-        circle at 50% 200px,
-        rgba(255, 215, 0, 0.08) 0%,    /* Subtle golden glow */
-        transparent 40%
-      ),
-      linear-gradient(
-        0deg,
-        transparent 0%,
-        rgba(30, 26, 44, 0.3) 50%,
-        transparent 100%
-      );
-    pointer-events: none;
-    mix-blend-mode: soft-light;
+  
+  .section-title {
+    font-size: 1.5rem;
   }
-
-  .about-text h1 {
-    font-family: 'Silkscreen', monospace;
-    font-size: 3.5rem;
-    color: #FFFFFF;  /* Pure white */
-    text-align: center;
-    margin: 4rem 0;
-    text-transform: uppercase;
-    animation: glow 1.5s infinite;  /* Using your existing glow animation */
-}
-
-.about-text p, 
-.about-text li {
-    font-family: 'Silkscreen', monospace;
-    font-size: 1.1rem;
-    color: #FFD700;  /* Bright gold */
-    text-align: center;
-    line-height: 2;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    max-width: 80%;
-    margin: 0 auto 2.5rem auto;
-}
-
-.about-text li {
-    text-align: left;
-    list-style-type: none;
-    margin-bottom: 1.5rem;
+  
+  .about-text p {
+    font-size: 0.7rem;
+    line-height: 1.8;
+  }
+  
+  .learnings-list li {
+    font-size: 0.7rem;
+    line-height: 1.8;
+  }
 }

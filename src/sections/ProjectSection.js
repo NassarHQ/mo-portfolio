@@ -42,6 +42,7 @@ const projects = [
 
 const ProjectCard = ({ project, onClick }) => {
   return (
+    
     <motion.div
       className="project-card"
       whileHover={{ scale: 1.05 }}

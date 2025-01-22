@@ -1,138 +1,146 @@
-@keyframes glow {
-  0% {
-    text-shadow: 0 0 2px rgba(227, 194, 139, 0.4),
-                 0 0 4px rgba(227, 194, 139, 0.3),
-                 0 0 6px rgba(255, 152, 0, 0.2);
-  }
-  50% {
-    text-shadow: 0 0 3px rgba(227, 194, 139, 0.5),
-                 0 0 6px rgba(255, 152, 0, 0.4),
-                 0 0 8px rgba(255, 152, 0, 0.3);
-  }
-  100% {
-    text-shadow: 0 0 2px rgba(227, 194, 139, 0.4),
-                 0 0 4px rgba(227, 194, 139, 0.3),
-                 0 0 6px rgba(255, 152, 0, 0.2);
-  }
+/* HeroSection.css */
+.hero {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh;
+  padding: 50px;
+  position: relative;
+  overflow: hidden;
+  background-color: #0a0a1f;
 }
-
-.glowing-text {
-  animation: glow 3s ease-in-out infinite;
-}
-
-
-/* Add shimmer animation */
-@keyframes frameShimmer {
-    0% { background-position: 0% 50%; }
-    100% { background-position: 100% 50%; }
-  }
-  
-
-@keyframes subtleSwing {
-    0% {
-      transform: rotate(0deg) translateZ(0);
-    }
-    25% {
-      transform: rotate(-2deg) translateZ(10px);
-    }
-    75% {
-      transform: rotate(2deg) translateZ(10px);
-    }
-    100% {
-      transform: rotate(0deg) translateZ(0);
-    }
-  }
-
-@keyframes subtleShift {
-    0% {
-      background-position: 0% 0%;
-    }
-    50% {
-      background-position: 100% 100%;
-    }
-    100% {
-      background-position: 0% 0%;
-    }
-  }
-
-  @font-face {
-    font-family: 'Silkscreen';
-    src: url('../Silkscreen/slkscr.ttf') format('truetype');
-  }
-  
-  .background {
-    animation: subtleShift 30s ease infinite;
-    background-size: 400% 400%;
-  }
 
 .atmosphere {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: 
-      radial-gradient(
-        circle at 50% 200px,
-        rgba(255, 215, 0, 0.08) 0%,    /* Subtle golden glow */
-        transparent 40%
-      ),
-      linear-gradient(
-        0deg,
-        transparent 0%,
-        rgba(30, 26, 44, 0.3) 50%,
-        transparent 100%
-      );
-    pointer-events: none;
-    mix-blend-mode: soft-light;
-  }
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(135, 206, 235, 0.1) 0%, rgba(26, 27, 38, 0) 70%);
+  pointer-events: none;
+}
 
-  .hero {
-    display: flex;
-    justify-content: flex-start; /* Align everything to the left */
-    align-items: flex-start; /* Align items at the top */
-    align-items: center;
-    height: 100vh;
-    padding: 50px;
-    position: relative;
+.hero-text {
+  flex: 1;
+  margin-left: 20%;
+  position: relative;
+  z-index: 2;
 }
 
 .hero-image {
-  flex: 1; /* Allow it to take up equal space */
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%; /* Maintain full height of the section */
-  padding: 20px;
+  position: relative;
 }
 
-.hero-image img {
-  max-width: 90%;
-  height: auto; /* Maintain aspect ratio */
-  object-fit: contain;
-  animation: subtleSwing 4s ease-in-out infinite;
-  border: 0.5em solid transparent; /* Use scalable units for the border */
-    background: linear-gradient(45deg, #FEFFF8, #ffd700, #FEFFF8, #ffd700) border-box;
-    box-shadow: 
-      0 0 15px rgba(255, 215, 0, 0.3),  /* Outer glow */
-      inset 0 0 15px rgba(255, 215, 0, 0.3);  /* Inner glow */
+.glowing-text {
+  font-family: 'Press Start 2P', cursive;
+  font-size: clamp(1.2rem, 3vw, 2.5rem); /* Responsive font size */
+  color: #ffd700;
+  margin: 20px 0;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
 }
 
-/* HeroSection.css */
-.hero-text {
-  flex: 1; /* Maintain equal space */
-  margin-left: 20%; /* Push text further to the right */
-}
-
-.hero-text h1 {
-  font-family: 'Silkscreen', monospace;
+.scroll-indicator {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
+  flex-direction: column;
   align-items: center;
-  align-content: center;
-  font-size: 3rem;
-  color: #FEFFF8;
-  margin: 10px 10px;
-  animation: glow 1.5s infinite;
+  z-index: 100;
 }
 
+.scroll-text {
+  font-family: 'Press Start 2P', cursive;
+  color: #ffd700;
+  font-size: 0.8rem;
+  margin-bottom: 8px;
+}
 
+.scroll-arrow {
+  width: 20px;
+  height: 20px;
+  border-right: 2px solid #ffd700;
+  border-bottom: 2px solid #ffd700;
+  transform: rotate(45deg);
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0) rotate(45deg);
+  }
+  40% {
+    transform: translateY(-10px) rotate(45deg);
+  }
+  60% {
+    transform: translateY(-5px) rotate(45deg);
+  }
+}
+
+/* Media Queries for responsive design */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    padding: 20px;
+    justify-content: center;
+  }
+
+  .hero-text {
+    margin-left: 0;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .glowing-text {
+    margin: 15px 0;
+  }
+
+  .hero-image {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .scroll-indicator {
+    bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 15px;
+  }
+
+  .glowing-text {
+    margin: 10px 0;
+  }
+
+  .hero-image {
+    max-width: 250px;
+  }
+
+  .scroll-text {
+    font-size: 0.6rem;
+  }
+
+  .scroll-arrow {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+/* For very small screens */
+@media (max-width: 320px) {
+  .hero {
+    padding: 10px;
+  }
+
+  .hero-image {
+    max-width: 200px;
+  }
+}

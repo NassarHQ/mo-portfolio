@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 @keyframes glow {
   0% {
     text-shadow: 0 0 2px rgba(227, 194, 139, 0.4),
@@ -30,8 +32,6 @@
   background: transparent;
 }
 
-
-
 .navigation-grid {
   display: flex;
   flex-direction: column;
@@ -43,9 +43,11 @@
   background: transparent;
   box-shadow: none;
   border: none;
+  margin-top: -2rem; /* Moves it upward */
 }
 
 .nav-item {
+  font-family: 'Press Start 2P', cursive;
   display: flex;
   flex-direction: column; /* Stack icon and text */
   align-items: center; /* Center icon and text */
@@ -63,13 +65,14 @@
   width: 32px;
   height: 32px;
   margin-bottom: 0.5rem;
-  overflow: hidden; /* Ensures SVGs don't get clipped */
+  overflow: hidden;
+
 }
 
 
 .nav-text {
+  font-family: 'Press Start 2P', cursive;
   color: #FFD700;
-  font-family: 'Silkscreen', monospace;
   font-size: 0.75rem;
   letter-spacing: 1px;
   text-align: center;
